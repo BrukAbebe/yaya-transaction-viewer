@@ -1,0 +1,30 @@
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.npm/
+.yarn/
+
+# Editor/OS Specific
+.vscode/        # VSCode settings (if you don't want to share)
+.DS_Store       # macOS specific
+Thumbs.db       # Windows specific
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+
+# Environment variables
+.env            # Crucial! Contains API keys, secrets etc.
+.env.local
+.env.development
+.env.production
+.env.test
+
+# Build artifacts for TypeScript
+dist/           # Compiled JavaScript output from TypeScript
+build/

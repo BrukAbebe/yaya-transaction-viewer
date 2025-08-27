@@ -1,0 +1,33 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.npm/
+.yarn/
+
+# Editor/OS Specific
+.vscode/        # VSCode settings (if you don't want to share)
+.DS_Store       # macOS specific
+Thumbs.db       # Windows specific
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env            # Dotenv file
+.env.local      # Local .env file for Vite/React
+.env.*.local    # Other local .env files
+
+# Build artifacts
+build/
+dist/           # Vite's default build output
+out/
+
+# Dependency directories
+coverage/       # Jest/Vitest test coverage

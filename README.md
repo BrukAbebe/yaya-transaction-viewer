@@ -107,8 +107,7 @@ VITE_CLIENT_URL=http://localhost:5174              # URL of your frontend applic
 2.  Install dependencies:
     ```bash
     npm install
-    # or
-    yarn install
+   
     ```
 3.  Create a `.env` file in the `Frontend` directory and add the `VITE_API_BASE_URL` variable as shown above.
 
@@ -140,8 +139,9 @@ VITE_CLIENT_URL=http://localhost:5174              # URL of your frontend applic
 
 1.  From the `backend` directory:
     ```bash
+    npm run dev
+    or
     npm run start:dev
-   
     ```
     The backend API will typically run on `http://localhost:5001`.
 

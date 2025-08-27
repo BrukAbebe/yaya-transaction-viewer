@@ -84,11 +84,11 @@ VITE_API_BASE_URL=http://localhost:5001/api
 
 ```env
 # --- YaYa Wallet API Configuration ---
-YAYA_API_URL=https://api.yayawallet.com             # YaYa Wallet production API URL
+YAYA_API_URL=YAYA_API_URL           # YaYa Wallet production API URL
 YAYA_API_KEY=your_yaya_api_key_here                # Your YaYa API Key
 YAYA_API_SECRET=your_yaya_api_secret_here          # Your YaYa API Secret
 YAYA_API_PATH=/api/en                              # YaYa API Path (default /api/en)
-YAYA_TEST_API_URL=https://api.test.yayawallet.com  # YaYa Wallet Test API URL
+YAYA_TEST_API_URL=YAYA_TEST_API_URL    # YaYa Wallet Test API URL
 
 # --- Server Configuration ---
 PORT=5001                                          # Port for the Express server

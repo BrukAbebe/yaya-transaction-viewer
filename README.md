@@ -181,9 +181,10 @@ The backend provides the following endpoints:
     *   **Description**: Searches for transactions based on specified criteria.
     *   **Request Body (JSON)**:
         *   `id`: (Optional) Transaction ID to search for.
-        *   `senderAccount`: (Optional) Sender's account to search for.
-        *   `receiverAccount`: (Optional) Receiver's account to search for.
         *   `cause`: (Optional) Cause/description of the transaction to search for.
+        *   when i tried with it didnt work
+        *      *   `senderAccount`: (Optional) Sender's account to search for.
+        *      *   `receiverAccount`: (Optional) Receiver's account to search for.
         *   **Note**: At least one search field must be provided.
     *   **Example Request**: `POST http://localhost:5000/api/transactions/search`
         ```json
@@ -207,8 +208,7 @@ The backend provides the following endpoints:
 ## Problem-Solving Approach
 
 1.  **Decomposition**: The problem was naturally split into frontend and backend components. The frontend handles UI, user interaction, and data display, while the backend focuses on API integration, data retrieval, and serving the frontend.
-2.  **Frontend First (given)**: The initial frontend code was provided, so the task was to ensure the backend could seamlessly support its requirements. This meant defining shared types (`types.ts`) that the backend would adhere to.
-3.  **Backend Structure (Express.js)**:
+2.  **Backend Structure (Express.js)**:
     *   **Modularization**: Organized into `controllers`, `services`, `middleware`, and `utils` for maintainability and separation of concerns.
     *   **SDK Integration**: The `yayaService.ts` was the core integration point with the `@yayawallet/node-sdk`. This centralizes all external API calls.
     *   **Robustness**: Implemented retry logic for `getServerTime` and `searchTransactions` to handle transient network issues or API flakiness. Timeout was added for `searchTransaction` to prevent indefinite hanging.
@@ -217,7 +217,7 @@ The backend provides the following endpoints:
     *   **Security**: Basic security measures like `helmet`, `cors`, and `express-rate-limit` were added.
     *   **Logging**: A simple logger was implemented to provide visibility into application flow and errors, crucial for debugging and monitoring.
 
-5.  **Environment Variables**: All sensitive information and configuration parameters were externalized into `.env` files, promoting best practices for deployment and easy configuration changes.
+3.  **Environment Variables**: All sensitive information and configuration parameters were externalized into `.env` files, promoting best practices for deployment and easy configuration changes.
 
 
 ## Testing
@@ -243,7 +243,8 @@ The backend provides the following endpoints:
         *   Observe the `data` and `lastPage` in the response.
     *   **`POST /api/transactions/search`**:
         *   `POST /api/transactions/search` with body `{ "id": "some_id" }`: Test search by ID.
-        *   `POST /api/transactions/search` with body `{ "senderAccount": "johndoe" }`: Test search by sender.
+        *   this is didnt work 
+        *     * `POST /api/transactions/search` with body `{ "senderAccount": "johndoe" }`: Test search by sender.
         *   `POST /api/transactions/search` with body `{ "cause": "utility" }`: Test search by cause.
         *   `POST /api/transactions/search` with empty body `{}`: Expect 400 Bad Request ("At least one search field must be provided").
         *   `POST /api/transactions/search` with unknown fields or oversized strings (expect 400 Bad Request due to `zod` validation).

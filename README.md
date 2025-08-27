@@ -229,7 +229,8 @@ The backend provides the following endpoints:
     *   **Pagination**: Test "Previous" and "Next" buttons. Ensure they are disabled at the start/end of pages. Observe loading spinners.
     *   **Search**:
         *   Enter values in the search bar and press Enter or click the search button.
-        *   Test searching by Transaction ID, Sender Account, Receiver Account, and Cause using the filter dropdown.
+        *   Test searching by Transaction ID,Cause using the filter dropdown.
+        *   but search by senderAccount and receiverAccount didnt work
         
 
 ### Backend Testing
